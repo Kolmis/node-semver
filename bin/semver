@@ -20,10 +20,10 @@ main()
 
 function main () {
   if (!argv.length) return help() //if no commandline arguments then return help
-  while (argv.length) {
+  while (argv.length) { //run trough every charachter of the argument
     //The shift() method pulls the first element off of the given array and returns it.
     var a = argv.shift()
-    //ndexOf function returns the first index of an item inside an array or -1 if it didn't find the item.
+    //indexOf function returns the first index of an item inside an array or -1 if it didn't find the item.
     var i = a.indexOf('=')
     //if not empty array
     if (i !== -1) {
@@ -32,16 +32,16 @@ function main () {
       //The unshift() method can prepend one or more elements to the beginning of an array.
       argv.unshift(a.slice(i + 1))
     }
-    switch (a) {
-      case "-rv": case "-rev": case "--rev": case "--reverse":
+    switch (a) { //Use the switch statement to select one of many blocks of code to be executed.
+      case "-rv": case "-rev": case "--rev": case "--reverse": //if reverse is in arguments turn it to true.
         reverse = true
         break
-      case "-l": case "--loose":
+      case "-l": case "--loose": //if loose is in the arguments turn it to true.
         loose = true
         break
       case "-v": case "--version":
-        versions.push(argv.shift())
-        break
+        versions.push(argv.shift()) //The push() method can append one or more elements to the end of an array.
+        break //The shift() method pulls the first element off of the given array and returns it. (in this case takes it off from arguments and pushes it to versions)
       case "-i": case "--inc": case "--increment":
         switch (argv[0]) {
           case "major": case "minor": case "patch": case "prerelease":
