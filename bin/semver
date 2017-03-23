@@ -21,10 +21,15 @@ main()
 function main () {
   if (!argv.length) return help()
   while (argv.length) {
+    //The shift() method pulls the first element off of the given array and returns it.
     var a = argv.shift()
+    //ndexOf function returns the first index of an item inside an array or -1 if it didn't find the item.
     var i = a.indexOf('=')
+    //if not empty array
     if (i !== -1) {
+      //Select elements from an array
       a = a.slice(0, i)
+      //The unshift() method can prepend one or more elements to the beginning of an array.
       argv.unshift(a.slice(i + 1))
     }
     switch (a) {
