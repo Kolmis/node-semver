@@ -19,7 +19,7 @@ var argv = process.argv.slice(2)
 main()
 
 function main () {
-  if (!argv.length) return help() //if argument version is empty then return help
+  if (!argv.length) return help() //if no commandline arguments then return help
   while (argv.length) {
     //The shift() method pulls the first element off of the given array and returns it.
     var a = argv.shift()
